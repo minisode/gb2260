@@ -1,0 +1,17 @@
+{
+  "name": "gb2260-x",
+  "main": "index.js",
+  "version": "1.0.3",
+  "license": "MIT",
+  "bin": {
+    "gb2260": "bin/gb2260.js"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "helmet": "^3.22.0",
+    "minimist": "^1.2.5",
+    "morgan": "^1.10.0"
+  }
+}
