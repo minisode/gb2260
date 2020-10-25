@@ -1,7 +1,7 @@
 {
   "name": "gb2260-x",
   "main": "index.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "bin": {
     "gb2260": "bin/gb2260.js"

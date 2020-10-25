@@ -1,6 +1,6 @@
+const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
-const express = require('express')
 const { routes } = require('.')
 const server = express()
 
