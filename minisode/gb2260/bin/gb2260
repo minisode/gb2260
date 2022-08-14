@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require 'gb2260'
+require 'mercenary'
+
+if Gem.try_activate('pry')
+  require 'pry'
+end
+
+Mercenary.program(:gb2260) do |program|
+  program.version GB2260::VERSION
+  program.syntax 'gb2260 latest.json'
+
+  program.action do |args, options|
+    args[0].then { |_| _ || Dir['.gb2260{/**/*,}.json'].last }
+           .then { |_| _ || %{#{Dir.home}/.gb2260.json} }
+           .then { |_| GB2260.load_file!(_) }
+
+    if defined?(Pry)
+      Pry.start
+    else
+      require 'irb'
+      IRB.start(__FILE__)
+    end
+  end
+end
