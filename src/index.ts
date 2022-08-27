@@ -32,4 +32,5 @@ export function getTree(code?: Code) {
   return provinces.map((division) => division.toTree(...codes))
 }
 
+export * as amap from './amap'
 export { Division }
