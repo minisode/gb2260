@@ -28,11 +28,9 @@ export class Division {
     this.isProvince = isProvince(this.code)
     this.isPrefecture = isPrefecture(this.code)
     this.isCounty = isCounty(this.code)
-    this.type =
-      (this.isProvince && 'province') ||
-      (this.isPrefecture && 'prefecture') ||
-      (this.isCounty && 'county') ||
-      'unknown'
+    this.type = (this.isProvince && 'province') ||
+                (this.isPrefecture && 'prefecture') ||
+                (this.isCounty && 'county') || 'unknown'
   }
 
   getParent() {
