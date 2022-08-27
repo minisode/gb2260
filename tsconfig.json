@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "target": "ES2017",
+    "moduleResolution": "Node",
+    "esModuleInterop": true
+  }
+}
