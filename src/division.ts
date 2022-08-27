@@ -12,6 +12,14 @@ function isCounty(code: number) {
   return code % 100 > 0
 }
 
+function kindOf(division: Division) {
+  if (division.isProvince)   { return 'province' }
+  if (division.isPrefecture) { return 'prefecture' }
+  if (division.isCounty)     { return 'county' }
+
+  return 'unknown'
+}
+
 export type Code = string | number
 
 export class Division {
@@ -25,20 +33,10 @@ export class Division {
   constructor(code: Code) {
     this.code = Number(code)
     this.name = gb2260[code]
-
+    this.type = kindOf(this)
     this.isProvince = isProvince(this.code)
     this.isPrefecture = isPrefecture(this.code)
     this.isCounty = isCounty(this.code)
-
-    if (this.isProvince) {
-      this.type = 'province'
-    }
-    if (this.isPrefecture) {
-      this.type = 'prefecture'
-    }
-    if (this.isCounty) {
-      this.type = 'county'
-    }
   }
 
   getParent() {
@@ -73,7 +71,7 @@ export class Division {
     return {
       code: this.code,
       name: this.name,
-      type: this.type || 'unknown'
+      type: this.type
     }
   }
 }
